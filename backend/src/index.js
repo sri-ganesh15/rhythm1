@@ -5,6 +5,7 @@ import songRoutes from './routes/songRoutes.js'
 import adminRoutes from './routes/adminRoutes.js'
 import authRoutes from './routes/authRoutes.js'
 import dotenv from "dotenv"
+import { ConnectDb } from "./lib/db.js"
 
 dotenv.config()
 
@@ -25,4 +26,5 @@ app.use('/api/albums',albumRoutes);
 
 app.listen(PORT,()=>{
     console.log("Server is running on port 3000")
+    ConnectDb();
 })
